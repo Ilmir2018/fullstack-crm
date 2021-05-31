@@ -5,14 +5,14 @@ const mongoose = require('mongoose')
 const User = mongoose.model('users')
 require('dotenv').config();
 
-const options = {
+const key = {
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     secretOrKey: keys.jwt || process.env.SECRET
 }
 
 module.exports = passport => {
     passport.use(
-        new JwtStrategy(options, async (payload, done) => {
+        new JwtStrategy(key, async (payload, done) => {
 
             try {
                 const user = await User.findById(payload.userId).select('email id')
