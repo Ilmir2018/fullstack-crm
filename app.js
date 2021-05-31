@@ -3,6 +3,10 @@ const mongoose = require("mongoose");
 const passport = require("passport")
 const path = require("path")
 
+var distDir = __dirname + "/dist/";
+
+app.use(express.static(distDir));
+
 
 const authRoutes = require('./routes/auth')
 const analyticsRoutes = require('./routes/analytics')
