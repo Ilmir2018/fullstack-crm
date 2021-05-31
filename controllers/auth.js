@@ -21,6 +21,7 @@ module.exports.login = async function(req, res) {
             res.status(200).json({
                 token: `Bearer ${token}`
             })
+            console.log(req)
         } else {
             //Пароли не совпали
             res.status(401).json({
