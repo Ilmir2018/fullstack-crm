@@ -13,11 +13,11 @@ import { OrderPageComponent } from './components/order-page/order-page.component
 import { OrderPositionsComponent } from './components/order-page/order-positions/order-positions.component';
 import { OverviewComponent } from './components/overview/overview.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
-
+ 
 const routes: Routes = [
   {
     path: '', component: AuthLayoutComponent, children: [
-      {path: '', redirectTo: '/login', pathMatch: 'full'},
+      {path: '', redirectTo: 'login', pathMatch: 'full'},
       {path: 'login', component: LoginPageComponent},
       {path: 'register', component: RegisterPageComponent}
     ]
